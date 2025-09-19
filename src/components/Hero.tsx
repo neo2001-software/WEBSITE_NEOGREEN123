@@ -27,7 +27,7 @@ const Hero = () => {
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-                Cocopel Plant Nurseries provides premium quality grow pellets, grow bags, 
+                Neo Green provides premium quality grow pellets, grow bags, 
                 and raw materials to nurture healthy plants from seed to harvest.
               </p>
             </div>

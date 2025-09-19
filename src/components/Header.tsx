@@ -11,7 +11,6 @@ const Header = () => {
     { name: "Grow Pellets", href: "#products" },
     { name: "Grow Bags", href: "#products" },
     { name: "Raw Material", href: "#products" },
-    { name: "Contact Us", href: "#contact" },
   ];
 
   return (
@@ -25,7 +24,7 @@ const Header = () => {
             </div>
             <div className="flex flex-col">
               <h1 className="text-lg lg:text-xl font-bold text-foreground">
-                Cocopel Plant Nurseries
+                Neo Green
               </h1>
               <p className="text-xs lg:text-sm text-muted-foreground hidden sm:block">
                 your plant's foundation for steady growth

@@ -36,13 +36,13 @@ const About = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-                Cocopel Plant Nurseries
+                Neo Green
               </h2>
               <div className="w-16 h-1 bg-gradient-nature rounded-full"></div>
             </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Cocopel Lanka plant nursery has a capacity to grow Ten Million plants per year 
+              Neo Green plant nursery has a capacity to grow Ten Million plants per year 
               of various types: Tomatoes, Cucumber, Bell Pepper, Aubergine and many others. 
               These are grown from best quality seeds to meet customers' requirements.
             </p>
