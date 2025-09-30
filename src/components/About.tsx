@@ -4,27 +4,27 @@ const About = () => {
   const stats = [
     {
       icon: Sprout,
-      value: "10M+",
-      label: "Plants Per Year",
-      description: "Capacity to grow millions of healthy plants annually"
+      value: "Export",
+      label: "Quality Chilies",
+      description: "Premium Hot Dragon F1 and Scotch Bonnet varieties"
     },
     {
       icon: Leaf,
-      value: "5+",
-      label: "Plant Varieties",
-      description: "Tomatoes, Cucumber, Bell Pepper, Aubergine & more"
+      value: "100%",
+      label: "Organic Compost",
+      description: "Chemical-free worm compost for soil enrichment"
     },
     {
       icon: Award,
       value: "Premium",
-      label: "Quality Seeds",
-      description: "Best quality seeds to meet customer requirements"
+      label: "Cocopeat",
+      description: "Renewable growing medium for modern agriculture"
     },
     {
       icon: Globe,
       value: "Sustainable",
-      label: "Growing Practices",
-      description: "Eco-friendly coconut coir-based growing solutions"
+      label: "Farming Methods",
+      description: "Protected cultivation with environmental responsibility"
     }
   ];
 
@@ -36,35 +36,35 @@ const About = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-                Neo Green
+                NeoGreen Agribusiness
               </h2>
               <div className="w-16 h-1 bg-gradient-nature rounded-full"></div>
             </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Neo Green plant nursery has a capacity to grow Ten Million plants per year 
-              of various types: Tomatoes, Cucumber, Bell Pepper, Aubergine and many others. 
-              These are grown from best quality seeds to meet customers' requirements.
+              NeoGreen is a modern agribusiness specializing in sustainable protected cultivation and organic 
+              agricultural products. We combine modern technology with eco-friendly practices to produce 
+              high-quality crops and organic farming inputs for the Sri Lankan and global markets.
             </p>
 
             <p className="text-base text-muted-foreground leading-relaxed">
-              Our commitment to sustainable agriculture drives us to use premium coconut coir-based 
-              growing mediums that provide optimal conditions for plant development while maintaining 
-              environmental responsibility.
+              Based in Wenivelkola, Polgasowita, we manage advanced polytunnel greenhouses and organic compost 
+              units, revolutionizing agriculture in Sri Lanka through sustainable, high-yield, and environmentally 
+              responsible farming systems.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
               <div className="flex items-center space-x-2 bg-secondary/50 px-4 py-2 rounded-full">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-sm font-medium text-foreground">Organic Growing</span>
+                <span className="text-sm font-medium text-foreground">Protected Cultivation</span>
               </div>
               <div className="flex items-center space-x-2 bg-secondary/50 px-4 py-2 rounded-full">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-sm font-medium text-foreground">Expert Care</span>
+                <span className="text-sm font-medium text-foreground">Export Ready</span>
               </div>
               <div className="flex items-center space-x-2 bg-secondary/50 px-4 py-2 rounded-full">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-sm font-medium text-foreground">Quality Assured</span>
+                <span className="text-sm font-medium text-foreground">Organic Certified</span>
               </div>
             </div>
           </div>

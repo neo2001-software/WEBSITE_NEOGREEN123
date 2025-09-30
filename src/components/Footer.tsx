@@ -13,18 +13,18 @@ const Footer = () => {
                 <Leaf className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-background">
-                  Neo Green
+              <h3 className="text-lg font-bold text-background">
+                  NeoGreen Agribusiness
                 </h3>
                 <p className="text-sm text-background/70">
-                  your plant's foundation for steady growth
+                  Sustainable Agriculture • Premium Quality • Export Ready
                 </p>
               </div>
             </div>
             <p className="text-background/80 leading-relaxed">
-              Leading provider of premium coconut coir-based growing solutions, 
-              supporting sustainable agriculture with expert growing support and 
-              quality assured products.
+              Leading Sri Lankan agribusiness specializing in export-quality chilies 
+              and organic farming inputs, combining modern technology with sustainable 
+              practices for global markets.
             </p>
             <div className="flex space-x-4">
               <Button
@@ -48,7 +48,8 @@ const Footer = () => {
                 { name: "Home", href: "#home" },
                 { name: "About Us", href: "#about" },
                 { name: "Products", href: "#products" },
-                { name: "Gallery", href: "#gallery" },
+                { name: "Sustainability", href: "#sustainability" },
+                { name: "Contact", href: "#contact" },
               ].map((link) => (
                 <a
                   key={link.name}
@@ -62,7 +63,7 @@ const Footer = () => {
 
             <div className="pt-4 border-t border-background/20">
               <p className="text-xs text-background/60">
-                © 2024 Neo Green. All rights reserved.
+                © 2024 NeoGreen Agribusiness. All rights reserved.
               </p>
             </div>
           </div>

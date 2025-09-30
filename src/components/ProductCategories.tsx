@@ -1,29 +1,29 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import growPelletsImage from "@/assets/grow-pellets.jpg";
-import growBagsImage from "@/assets/grow-bags.jpg";
-import rawMaterialImage from "@/assets/raw-material.jpg";
+import hotDragonImage from "@/assets/hot-dragon-chilies.jpg";
+import organicCompostImage from "@/assets/organic-compost.jpg";
+import cocopeatImage from "@/assets/cocopeat-product.jpg";
 
 const ProductCategories = () => {
   const products = [
     {
-      title: "Grow Pellets",
-      description: "Premium coconut coir pellets that expand when watered, providing excellent drainage and aeration for optimal plant growth.",
-      image: growPelletsImage,
-      features: ["100% Natural", "Perfect pH Balance", "Excellent Water Retention"]
+      title: "Premium Chili Varieties",
+      description: "Export-quality Hot Dragon F1 and Scotch Bonnet chilies with year-round production, pest resistance, and uniform quality for global markets.",
+      image: hotDragonImage,
+      features: ["Export Quality", "Year-Round Production", "High Heat & Yield"]
     },
     {
-      title: "Grow Bags",
-      description: "Durable, breathable growing bags designed for container gardening and nursery applications with superior root development.",
-      image: growBagsImage,
-      features: ["UV Resistant", "Optimal Drainage", "Reusable Design"]
+      title: "Organic Worm Compost",
+      description: "100% organic and chemical-free compost that enriches soil fertility, boosts plant growth, and available in retail and bulk packs.",
+      image: organicCompostImage,
+      features: ["Chemical-Free", "Soil Enrichment", "Bulk Available"]
     },
     {
-      title: "Raw Material",
-      description: "High-quality coconut coir raw materials sourced sustainably for various agricultural and horticultural applications.",
-      image: rawMaterialImage,
-      features: ["Eco-Friendly", "Consistent Quality", "Bulk Available"]
+      title: "Premium Cocopeat",
+      description: "Organic, renewable, and biodegradable growing medium with excellent water retention, ideal for hydroponics and potted plants.",
+      image: cocopeatImage,
+      features: ["Water Retention", "Renewable", "Hydroponics Ready"]
     }
   ];
 

@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-plants.jpg";
+import heroImage from "@/assets/hero-agribusiness.jpg";
 
 const Hero = () => {
   return (
@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Young plants growing in coco grow pellets"
+          alt="Premium chilies growing in modern greenhouse facility"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/60 to-transparent"></div>
@@ -21,14 +21,14 @@ const Hero = () => {
           <div className="space-y-6 lg:space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Your Plant's Foundation for{" "}
+                Premium Export-Quality{" "}
                 <span className="bg-gradient-nature bg-clip-text text-transparent">
-                  Steady Growth
+                  Agricultural Products
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-                Neo Green provides premium quality grow pellets, grow bags, 
-                and raw materials to nurture healthy plants from seed to harvest.
+                NeoGreen Agribusiness specializes in sustainable protected cultivation, 
+                producing premium chilies and organic farming inputs for global markets.
               </p>
             </div>
 
@@ -37,7 +37,7 @@ const Hero = () => {
                 size="lg" 
                 className="bg-gradient-nature hover:opacity-90 text-white shadow-medium group"
               >
-                Explore Products
+                Export Inquiry
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
               </Button>
               <Button 
@@ -45,22 +45,22 @@ const Hero = () => {
                 variant="outline" 
                 className="border-border hover:bg-secondary/50"
               >
-                Learn More
+                View Products
               </Button>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8">
               <div className="text-center sm:text-left">
-                <div className="text-3xl lg:text-4xl font-bold text-primary">10M+</div>
-                <div className="text-sm text-muted-foreground">Plants Per Year</div>
+                <div className="text-3xl lg:text-4xl font-bold text-primary">Export</div>
+                <div className="text-sm text-muted-foreground">Quality Chilies</div>
               </div>
               <div className="text-center sm:text-left">
-                <div className="text-3xl lg:text-4xl font-bold text-primary">Premium</div>
-                <div className="text-sm text-muted-foreground">Quality Seeds</div>
+                <div className="text-3xl lg:text-4xl font-bold text-primary">100%</div>
+                <div className="text-sm text-muted-foreground">Organic Inputs</div>
               </div>
               <div className="text-center sm:text-left">
-                <div className="text-3xl lg:text-4xl font-bold text-primary">Expert</div>
-                <div className="text-sm text-muted-foreground">Growing Support</div>
+                <div className="text-3xl lg:text-4xl font-bold text-primary">Sustainable</div>
+                <div className="text-sm text-muted-foreground">Farming Methods</div>
               </div>
             </div>
           </div>

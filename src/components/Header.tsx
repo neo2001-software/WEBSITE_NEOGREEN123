@@ -8,9 +8,10 @@ const Header = () => {
   const navItems = [
     { name: "Home", href: "#home" },
     { name: "About Us", href: "#about" },
-    { name: "Grow Pellets", href: "#products" },
-    { name: "Grow Bags", href: "#products" },
-    { name: "Raw Material", href: "#products" },
+    { name: "Products", href: "#products" },
+    { name: "Sustainability", href: "#sustainability" },
+    { name: "Export Inquiry", href: "#contact" },
+    { name: "Contact Us", href: "#contact" },
   ];
 
   return (
@@ -24,10 +25,10 @@ const Header = () => {
             </div>
             <div className="flex flex-col">
               <h1 className="text-lg lg:text-xl font-bold text-foreground">
-                Neo Green
+                NeoGreen Agribusiness
               </h1>
               <p className="text-xs lg:text-sm text-muted-foreground hidden sm:block">
-                your plant's foundation for steady growth
+                Sustainable Agriculture • Premium Quality • Export Ready
               </p>
             </div>
           </div>
