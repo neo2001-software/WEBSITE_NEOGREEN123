@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Package, Shield, Truck } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import OrderChatWidget from "@/components/OrderChatWidget";
 
 const Order = () => {
   const [formData, setFormData] = useState({
@@ -54,6 +55,13 @@ const Order = () => {
 
   const handleChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleFormSubmit = () => {
+    const form = document.querySelector('form');
+    if (form) {
+      form.requestSubmit();
+    }
   };
 
   const getPackagingOptions = (product: string) => {
@@ -374,6 +382,23 @@ const Order = () => {
         </div>
       </main>
       <Footer />
+      <OrderChatWidget
+        onUpdateForm={handleChange}
+        onSubmit={handleFormSubmit}
+        formData={{
+          product: formData.product,
+          quantity: formData.quantity,
+          packaging: formData.packaging,
+          destination: formData.destination,
+          incoterms: formData.incoterms,
+          deliveryDate: formData.deliveryDate,
+          buyerName: formData.buyerName,
+          company: formData.company,
+          email: formData.email,
+          phone: formData.phone,
+          notes: formData.notes
+        }}
+      />
     </div>
   );
 };
