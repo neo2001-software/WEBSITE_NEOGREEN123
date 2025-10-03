@@ -27,7 +27,7 @@ const Hero = () => {
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-                NeoGreen Agribusiness specializes in sustainable protected cultivation, 
+                NeoGreen specializes in sustainable protected cultivation, 
                 producing premium chilies and organic farming inputs for global markets.
               </p>
             </div>

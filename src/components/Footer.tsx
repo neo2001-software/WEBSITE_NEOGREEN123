@@ -14,7 +14,7 @@ const Footer = () => {
               </div>
               <div>
               <h3 className="text-lg font-bold text-background">
-                  NeoGreen Agribusiness
+                  NeoGreen
                 </h3>
                 <p className="text-sm text-background/70">
                   Sustainable Agriculture • Premium Quality • Export Ready
@@ -63,7 +63,7 @@ const Footer = () => {
 
             <div className="pt-4 border-t border-background/20">
               <p className="text-xs text-background/60">
-                © 2024 NeoGreen Agribusiness. All rights reserved.
+                © 2024 NeoGreen. All rights reserved.
               </p>
             </div>
           </div>

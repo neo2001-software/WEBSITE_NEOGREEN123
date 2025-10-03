@@ -25,7 +25,7 @@ const Header = () => {
             </div>
             <div className="flex flex-col">
               <h1 className="text-lg lg:text-xl font-bold text-foreground">
-                NeoGreen Agribusiness
+                NeoGreen
               </h1>
               <p className="text-xs lg:text-sm text-muted-foreground hidden sm:block">
                 Sustainable Agriculture • Premium Quality • Export Ready
