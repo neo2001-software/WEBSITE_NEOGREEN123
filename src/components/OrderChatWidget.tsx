@@ -57,8 +57,16 @@ const OrderChatWidget = ({ onUpdateForm, onSubmit, formData }: OrderChatWidgetPr
 
   const parseAIResponse = (aiMessage: string) => {
     try {
-      // Try to parse as JSON first
-      const parsed = JSON.parse(aiMessage);
+      // Strip markdown code blocks if present
+      let cleanedMessage = aiMessage.trim();
+      if (cleanedMessage.startsWith("```json")) {
+        cleanedMessage = cleanedMessage.replace(/^```json\s*/, '').replace(/\s*```$/, '');
+      } else if (cleanedMessage.startsWith("```")) {
+        cleanedMessage = cleanedMessage.replace(/^```\s*/, '').replace(/\s*```$/, '');
+      }
+      
+      // Try to parse as JSON
+      const parsed = JSON.parse(cleanedMessage);
       
       if (parsed.entities) {
         // Update form fields based on extracted entities
@@ -110,11 +118,16 @@ const OrderChatWidget = ({ onUpdateForm, onSubmit, formData }: OrderChatWidgetPr
           onUpdateForm("phone", parsed.entities.phone);
         }
 
+        if (parsed.entities.notes) {
+          onUpdateForm("notes", parsed.entities.notes);
+        }
+
         return parsed.message || "I've updated the form with your details.";
       }
       
       return parsed.message || aiMessage;
-    } catch {
+    } catch (error) {
+      console.error("Failed to parse AI response:", error, "Raw message:", aiMessage);
       // If not JSON, return as-is
       return aiMessage;
     }
