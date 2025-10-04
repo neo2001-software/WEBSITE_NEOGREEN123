@@ -10,6 +10,8 @@ import { CheckCircle, Package, Shield, Truck } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import OrderChatWidget from "@/components/OrderChatWidget";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const Order = () => {
   const [formData, setFormData] = useState({
@@ -26,6 +28,7 @@ const Order = () => {
     notes: ""
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState("");
 
   useEffect(() => {
@@ -43,14 +46,40 @@ const Order = () => {
     
     // Basic validation
     if (!formData.product || !formData.quantity || !formData.destination || !formData.buyerName || !formData.email) {
-      alert("Please fill in all required fields.");
+      toast.error("Please fill in all required fields.");
       return;
     }
 
-    // Here you would integrate with a form service like Formspree
-    // For now, we'll simulate success
-    console.log("Form submitted:", formData);
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from('orders')
+        .insert({
+          product: formData.product,
+          quantity: formData.quantity,
+          packaging: formData.packaging || null,
+          destination: formData.destination,
+          incoterms: formData.incoterms || null,
+          delivery_date: formData.deliveryDate || null,
+          buyer_name: formData.buyerName,
+          company: formData.company || null,
+          email: formData.email,
+          phone: formData.phone || null,
+          notes: formData.notes || null,
+          status: 'pending'
+        });
+
+      if (error) throw error;
+
+      toast.success("Order submitted successfully!");
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("Error submitting order:", error);
+      toast.error("Failed to submit order. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (field: string, value: string) => {
@@ -343,8 +372,9 @@ const Order = () => {
                     type="submit" 
                     className="w-full bg-gradient-nature hover:opacity-90 text-white"
                     size="lg"
+                    disabled={isSubmitting}
                   >
-                    Request Quote
+                    {isSubmitting ? "Submitting..." : "Request Quote"}
                   </Button>
 
                   <Button 
