@@ -127,6 +127,52 @@ Be conversational and helpful. If information is ambiguous, ask clarifying quest
           { role: "system", content: systemPrompt },
           ...messages,
         ],
+        tools: [
+          {
+            type: "function",
+            function: {
+              name: "update_order_form",
+              description: "Extract and update order form fields from user message",
+              parameters: {
+                type: "object",
+                properties: {
+                  message: {
+                    type: "string",
+                    description: "Friendly response to user about what was understood/updated or clarifying question"
+                  },
+                  entities: {
+                    type: "object",
+                    properties: {
+                      product: { type: "string" },
+                      variety: { type: "string" },
+                      quantity: { type: "string" },
+                      packaging: { type: "string" },
+                      packaging_option: { type: "string" },
+                      destination_country: { type: "string" },
+                      incoterms: { type: "string", enum: ["EXW", "FCA", "FOB", "CFR", "CIF", "DAP", "DDP"] },
+                      target_date: { type: "string", pattern: "^\\d{4}-\\d{2}-\\d{2}$" },
+                      buyer_name: { type: "string" },
+                      company: { type: "string" },
+                      email: { type: "string" },
+                      phone: { type: "string" },
+                      notes: { type: "string" }
+                    }
+                  },
+                  meta: {
+                    type: "object",
+                    properties: {
+                      missing: { type: "array", items: { type: "string" } },
+                      confidence: { type: "number" }
+                    }
+                  }
+                },
+                required: ["message"],
+                additionalProperties: false
+              }
+            }
+          }
+        ],
+        tool_choice: { type: "function", function: { name: "update_order_form" } }
       }),
     });
 
@@ -152,8 +198,17 @@ Be conversational and helpful. If information is ambiguous, ask clarifying quest
     }
 
     const data = await response.json();
-    const aiMessage = data.choices[0].message.content;
-
+    const toolCall = data.choices[0].message.tool_calls?.[0];
+    
+    if (toolCall?.function?.arguments) {
+      const structuredData = JSON.parse(toolCall.function.arguments);
+      return new Response(JSON.stringify(structuredData), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    
+    // Fallback if no tool call
+    const aiMessage = data.choices[0].message.content || "I couldn't process that. Please try again.";
     return new Response(JSON.stringify({ message: aiMessage }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });

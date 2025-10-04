@@ -185,8 +185,47 @@ const OrderChatWidget = ({ onUpdateForm, onSubmit, formData }: OrderChatWidgetPr
       }
 
       const data = await response.json();
-      const assistantMessage = parseAIResponse(data.message);
       
+      // Update form fields if entities are present
+      if (data.entities) {
+        Object.entries(data.entities).forEach(([key, value]) => {
+          if (value) {
+            const fieldMapping: Record<string, string> = {
+              product: "product",
+              quantity: "quantity",
+              packaging: "packaging",
+              destination_country: "destination",
+              incoterms: "incoterms",
+              target_date: "deliveryDate",
+              buyer_name: "buyerName",
+              company: "company",
+              email: "email",
+              phone: "phone",
+              notes: "notes"
+            };
+            
+            const formField = fieldMapping[key];
+            if (formField) {
+              let fieldValue = value as string;
+              
+              // Handle special cases
+              if (key === "product" && data.entities.variety) {
+                fieldValue = `${value} (${data.entities.variety})`;
+              }
+              if (key === "packaging" && data.entities.packaging_option) {
+                fieldValue = `${value} (${data.entities.packaging_option})`;
+              }
+              
+              // Skip if it's a sub-field already handled
+              if (key !== "variety" && key !== "packaging_option") {
+                onUpdateForm(formField, fieldValue);
+              }
+            }
+          }
+        });
+      }
+      
+      const assistantMessage = data.message || "I've updated the form with your details.";
       setMessages((prev) => [...prev, { role: "assistant", content: assistantMessage }]);
     } catch (error) {
       console.error("Chat error:", error);
