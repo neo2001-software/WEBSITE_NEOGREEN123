@@ -18,53 +18,53 @@ export type Database = {
         Row: {
           buyer_name: string
           company: string | null
-          created_at: string | null
-          delivery_date: string | null
-          destination: string
+          created_at: string
+          destination_country: string
           email: string
           id: string
-          incoterms: string
           notes: string | null
           packaging: string | null
-          phone: string | null
+          phone: string
           product: string
-          quantity: string
-          status: string | null
-          updated_at: string | null
+          quantity_unit: string
+          quantity_value: number
+          source: string
+          status: string
+          updated_at: string
         }
         Insert: {
           buyer_name: string
           company?: string | null
-          created_at?: string | null
-          delivery_date?: string | null
-          destination: string
+          created_at?: string
+          destination_country: string
           email: string
           id?: string
-          incoterms: string
           notes?: string | null
           packaging?: string | null
-          phone?: string | null
+          phone: string
           product: string
-          quantity: string
-          status?: string | null
-          updated_at?: string | null
+          quantity_unit: string
+          quantity_value: number
+          source?: string
+          status?: string
+          updated_at?: string
         }
         Update: {
           buyer_name?: string
           company?: string | null
-          created_at?: string | null
-          delivery_date?: string | null
-          destination?: string
+          created_at?: string
+          destination_country?: string
           email?: string
           id?: string
-          incoterms?: string
           notes?: string | null
           packaging?: string | null
-          phone?: string | null
+          phone?: string
           product?: string
-          quantity?: string
-          status?: string | null
-          updated_at?: string | null
+          quantity_unit?: string
+          quantity_value?: number
+          source?: string
+          status?: string
+          updated_at?: string
         }
         Relationships: []
       }
