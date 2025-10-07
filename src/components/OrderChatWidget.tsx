@@ -18,8 +18,6 @@ interface OrderChatWidgetProps {
     quantity: string;
     packaging: string;
     destination: string;
-    incoterms: string;
-    deliveryDate: string;
     buyerName: string;
     company: string;
     email: string;
@@ -263,9 +261,9 @@ const OrderChatWidget = ({ onUpdateForm, onSubmit, formData }: OrderChatWidgetPr
 
   const generateWhatsAppLink = () => {
     const params = new URLSearchParams({
-      text: `Order Request: ${formData.product || "[PRODUCT]"} - Qty: ${formData.quantity || "[___]"}, Pack: ${formData.packaging || "[___]"}, Incoterms: ${formData.incoterms || "[___]"}, Dest: ${formData.destination || "[___]"}, Date: ${formData.deliveryDate || "[___]"}, Buyer: ${formData.buyerName || "[___]"}, Company: ${formData.company || "[___]"}, Email: ${formData.email || "[___]"}, Phone: ${formData.phone || "[___]"}`,
+      text: `Order Request: ${formData.product || "[PRODUCT]"} - Qty: ${formData.quantity || "[___]"}, Pack: ${formData.packaging || "[___]"}, Dest: ${formData.destination || "[___]"}, Buyer: ${formData.buyerName || "[___]"}, Company: ${formData.company || "[___]"}, Email: ${formData.email || "[___]"}, Phone: ${formData.phone || "[___]"}`,
     });
-    return `https://wa.me/94775112541?${params.toString()}`;
+    return `https://wa.me/94778829398?${params.toString()}`;
   };
 
   if (!isOpen) {

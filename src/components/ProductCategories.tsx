@@ -8,22 +8,28 @@ import cocopeatImage from "@/assets/cocopeat-product.jpg";
 const ProductCategories = () => {
   const products = [
     {
-      title: "Premium Chili Varieties",
+      title: "Chili",
+      displayTitle: "Premium Chili Varieties",
       description: "Export-quality Hot Dragon F1 and Scotch Bonnet chilies with year-round production, pest resistance, and uniform quality for global markets.",
       image: hotDragonImage,
-      features: ["Export Quality", "Year-Round Production", "High Heat & Yield"]
+      features: ["Export Quality", "Year-Round Production", "High Heat & Yield"],
+      productParam: "chili"
     },
     {
       title: "Organic Worm Compost",
+      displayTitle: "Organic Worm Compost",
       description: "100% organic and chemical-free compost that enriches soil fertility, boosts plant growth, and available in retail and bulk packs.",
       image: organicCompostImage,
-      features: ["Chemical-Free", "Soil Enrichment", "Bulk Available"]
+      features: ["Chemical-Free", "Soil Enrichment", "Bulk Available"],
+      productParam: "compost"
     },
     {
       title: "Premium Cocopeat",
+      displayTitle: "Premium Cocopeat",
       description: "Organic, renewable, and biodegradable growing medium with excellent water retention, ideal for hydroponics and potted plants.",
       image: cocopeatImage,
-      features: ["Water Retention", "Renewable", "Hydroponics Ready"]
+      features: ["Water Retention", "Renewable", "Hydroponics Ready"],
+      productParam: "cocopeat"
     }
   ];
 
@@ -55,7 +61,7 @@ const ProductCategories = () => {
               {/* Content */}
               <div className="p-6 space-y-4">
                 <h3 className="text-xl lg:text-2xl font-bold text-foreground">
-                  {product.title}
+                  {product.displayTitle}
                 </h3>
                 <p className="text-muted-foreground text-sm lg:text-base">
                   {product.description}
@@ -76,12 +82,7 @@ const ProductCategories = () => {
                     className="w-full bg-gradient-nature hover:opacity-90 text-white group/btn"
                     size="sm"
                     onClick={() => {
-                      const productNames = {
-                        "Premium Chili Varieties": "Premium Chili (Hot Dragon F1 / Scotch Bonnet)",
-                        "Organic Worm Compost": "Organic Worm Compost",
-                        "Premium Cocopeat": "Premium Cocopeat"
-                      };
-                      window.location.href = `/order?product=${encodeURIComponent(productNames[product.title as keyof typeof productNames])}`;
+                      window.location.href = `/order?product=${product.productParam}`;
                     }}
                   >
                     Learn More / Order
@@ -93,14 +94,8 @@ const ProductCategories = () => {
                     className="w-full border-primary text-primary hover:bg-primary/5 group/whatsapp"
                     size="sm"
                     onClick={() => {
-                      const productNames = {
-                        "Premium Chili Varieties": "Premium Chili (Hot Dragon F1 / Scotch Bonnet)",
-                        "Organic Worm Compost": "Organic Worm Compost",
-                        "Premium Cocopeat": "Premium Cocopeat"
-                      };
-                      const productName = productNames[product.title as keyof typeof productNames];
-                      const whatsappText = `Hello NeoGreen! I'd like to order ${productName} — Quantity: [___] Packaging: [___] Destination: [___]`;
-                      window.open(`https://wa.me/94775112541?text=${encodeURIComponent(whatsappText)}`, '_blank');
+                      const whatsappText = `Hello NeoGreen! I'd like to order ${product.displayTitle}`;
+                      window.open(`https://wa.me/94778829398?text=${encodeURIComponent(whatsappText)}`, '_blank');
                     }}
                   >
                     <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
