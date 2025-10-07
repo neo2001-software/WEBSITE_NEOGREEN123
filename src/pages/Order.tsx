@@ -23,7 +23,6 @@ const ASIAN_COUNTRIES = [
 ];
 
 const PRODUCT_OPTIONS = [
-  { value: "", label: "— Select a product —" },
   { value: "Hot Dragon F1 (Chili)", label: "Hot Dragon F1 (Chili)" },
   { value: "Scotch Bonnet (Chili)", label: "Scotch Bonnet (Chili)" },
   { value: "Organic Worm Compost", label: "Organic Worm Compost" },
