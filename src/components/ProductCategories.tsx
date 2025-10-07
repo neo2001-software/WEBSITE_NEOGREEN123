@@ -4,6 +4,8 @@ import { Card } from "@/components/ui/card";
 import hotDragonImage from "@/assets/hot-dragon-chilies.jpg";
 import organicCompostImage from "@/assets/organic-compost.jpg";
 import cocopeatImage from "@/assets/cocopeat-product.jpg";
+import { openWhatsApp } from "@/lib/whatsapp";
+import { toast } from "sonner";
 
 const ProductCategories = () => {
   const products = [
@@ -95,7 +97,15 @@ const ProductCategories = () => {
                     size="sm"
                     onClick={() => {
                       const whatsappText = `Hello NeoGreen! I'd like to order ${product.displayTitle}`;
-                      window.open(`https://wa.me/94778829398?text=${encodeURIComponent(whatsappText)}`, '_blank');
+                      const { url, isBlocked } = openWhatsApp(whatsappText);
+                      
+                      if (isBlocked) {
+                        toast.info(
+                          <div>
+                            Popup blocked. <a href={url} target="_blank" rel="noopener noreferrer" className="underline font-medium">Click here to open WhatsApp</a>
+                          </div>
+                        );
+                      }
                     }}
                   >
                     <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">

@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { X, MessageCircle, Send, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { buildWhatsAppUrl, openWhatsApp } from "@/lib/whatsapp";
 
 interface Message {
   role: "user" | "assistant";
@@ -259,11 +260,17 @@ const OrderChatWidget = ({ onUpdateForm, onSubmit, formData }: OrderChatWidgetPr
     setInput(value);
   };
 
-  const generateWhatsAppLink = () => {
-    const params = new URLSearchParams({
-      text: `Order Request: ${formData.product || "[PRODUCT]"} - Qty: ${formData.quantity || "[___]"}, Pack: ${formData.packaging || "[___]"}, Dest: ${formData.destination || "[___]"}, Buyer: ${formData.buyerName || "[___]"}, Company: ${formData.company || "[___]"}, Email: ${formData.email || "[___]"}, Phone: ${formData.phone || "[___]"}`,
-    });
-    return `https://wa.me/94778829398?${params.toString()}`;
+  const handleWhatsAppClick = () => {
+    const message = `Order Request: ${formData.product || "[PRODUCT]"} - Qty: ${formData.quantity || "[___]"}, Pack: ${formData.packaging || "[___]"}, Dest: ${formData.destination || "[___]"}, Buyer: ${formData.buyerName || "[___]"}, Company: ${formData.company || "[___]"}, Email: ${formData.email || "[___]"}, Phone: ${formData.phone || "[___]"}`;
+    const { url, isBlocked } = openWhatsApp(message);
+    
+    if (isBlocked) {
+      toast.info(
+        <div>
+          Popup blocked. <a href={url} target="_blank" rel="noopener noreferrer" className="underline font-medium">Click here to open WhatsApp</a>
+        </div>
+      );
+    }
   };
 
   if (!isOpen) {
@@ -367,7 +374,7 @@ const OrderChatWidget = ({ onUpdateForm, onSubmit, formData }: OrderChatWidgetPr
           </Button>
         </div>
         <p className="text-xs text-muted-foreground mt-2 text-center">
-          Need help? <button onClick={() => window.open(generateWhatsAppLink(), "_blank")} className="underline">Talk to a human on WhatsApp</button>
+          Need help? <button onClick={handleWhatsAppClick} className="underline">Talk to a human on WhatsApp</button>
         </p>
       </div>
     </Card>
