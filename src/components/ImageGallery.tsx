@@ -7,6 +7,10 @@ import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
 import gallery5 from "@/assets/gallery-5.jpg";
 import gallery6 from "@/assets/gallery-6.jpg";
+import redScotchBonnet from "@/assets/red-scotch-bonnet.jpg";
+import greenScotchBonnet from "@/assets/green-scotch-bonnet.jpg";
+import greenChilies from "@/assets/green-chilies.jpg";
+import greenhousePlants from "@/assets/greenhouse-plants.jpg";
 
 const ImageGallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -41,6 +45,26 @@ const ImageGallery = () => {
       src: gallery6,
       alt: "Workers in modern plant nursery",
       title: "Professional Operations"
+    },
+    {
+      src: redScotchBonnet,
+      alt: "Fresh red scotch bonnet pepper",
+      title: "Red Scotch Bonnet Pepper"
+    },
+    {
+      src: greenScotchBonnet,
+      alt: "Harvest of green scotch bonnet peppers",
+      title: "Green Scotch Bonnet Peppers"
+    },
+    {
+      src: greenChilies,
+      alt: "Green chili peppers growing on plant",
+      title: "Green Chili Cultivation"
+    },
+    {
+      src: greenhousePlants,
+      alt: "Greenhouse nursery with young plants in white pots",
+      title: "Greenhouse Nursery"
     }
   ];
 
