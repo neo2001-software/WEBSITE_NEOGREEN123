@@ -45,6 +45,26 @@ const ImageGallery = () => {
       src: gallery6,
       alt: "Workers in modern plant nursery",
       title: "Professional Operations"
+    },
+    {
+      src: redScotchBonnet,
+      alt: "Fresh red scotch bonnet pepper",
+      title: "Red Scotch Bonnet Pepper"
+    },
+    {
+      src: greenScotchBonnet,
+      alt: "Harvest of green scotch bonnet peppers",
+      title: "Green Scotch Bonnet Peppers"
+    },
+    {
+      src: greenChilies,
+      alt: "Green chili peppers growing on plant",
+      title: "Green Chili Cultivation"
+    },
+    {
+      src: greenhousePlants,
+      alt: "Greenhouse nursery with young plants in white pots",
+      title: "Greenhouse Nursery"
     }
   ];
 
