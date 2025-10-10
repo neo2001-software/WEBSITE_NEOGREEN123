@@ -1,6 +1,7 @@
-import { Leaf, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/neogreen-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,17 +21,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-gradient-nature rounded-lg shadow-soft">
-              <Leaf className="w-6 h-6 lg:w-7 lg:h-7 text-white" />
-            </div>
-            <div className="flex flex-col">
-              <h1 className="text-lg lg:text-xl font-bold text-foreground">
-                NeoGreen
-              </h1>
-              <p className="text-xs lg:text-sm text-muted-foreground hidden sm:block">
-                Sustainable Agriculture • Premium Quality • Export Ready
-              </p>
-            </div>
+            <img 
+              src={logo} 
+              alt="NeoGreen Logo - Sustainable Agriculture" 
+              className="h-10 lg:h-14 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}
