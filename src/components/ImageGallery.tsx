@@ -1,12 +1,6 @@
 import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
-import gallery5 from "@/assets/gallery-5.jpg";
-import gallery6 from "@/assets/gallery-6.jpg";
 import redScotchBonnet from "@/assets/red-scotch-bonnet.jpg";
 import greenScotchBonnet from "@/assets/green-scotch-bonnet.jpg";
 import greenChilies from "@/assets/green-chilies.jpg";
@@ -16,36 +10,6 @@ const ImageGallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const images = [
-    {
-      src: gallery1,
-      alt: "Modern plant nursery greenhouse with tomato plants",
-      title: "Greenhouse Facilities"
-    },
-    {
-      src: gallery2,
-      alt: "Young cucumber plants in coconut coir pellets",
-      title: "Cucumber Seedlings"
-    },
-    {
-      src: gallery3,
-      alt: "Bell pepper plants in grow bags",
-      title: "Bell Pepper Cultivation"
-    },
-    {
-      src: gallery4,
-      alt: "Aubergine seedlings in nursery trays",
-      title: "Aubergine Plants"
-    },
-    {
-      src: gallery5,
-      alt: "Commercial plant nursery facility overview",
-      title: "Nursery Overview"
-    },
-    {
-      src: gallery6,
-      alt: "Workers in modern plant nursery",
-      title: "Professional Operations"
-    },
     {
       src: redScotchBonnet,
       alt: "Fresh red scotch bonnet pepper",
